@@ -43,7 +43,7 @@ class RegExParser:
         :param formula:
         :return:
         """
-        re_signs = "[" + "".join(DEFICIENCY_CHARS) + "]".replace("+", "\+").replace("-", "\-")
+        re_signs = r"[" + "".join(map(re.escape, DEFICIENCY_CHARS)) + "]"
         re_oxy_def = r"O[0-9]*([±\+\-∓]{1})[a-z" + self._greek_symbols + r"]{1}[0-9]*$"
 
         formula_upd = formula
