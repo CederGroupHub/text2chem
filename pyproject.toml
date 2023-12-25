@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+[tool.bumpversion]
+current_version = "0.0.1"
+commit = "true"
+tag = "true"
+tag_name = "v{new_version}"
+
+[project]
+name = "text2chem"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Ceder Research Group", email = "cedergroup-ml-team@lbl.gov" },
+]
+maintainers = [
+    { name = "Luca Foppiano", email = "lucanoro@duck.com" }
+]
+description = "RegEx-based text parser that converts chemical terms and material entities into chemical datastructure."
+readme = "README.md"
+
+dynamic = ['version']
+
+[tool.setuptools_scm]
+
+[project.urls]
+Homepage = "https://github.com/lfoppiano/text2chem"
+Repository = "https://github.com/lfoppiano/text2chem"
+Changelog = "https://github.com/lfoppiano/text2chem/blob/main/CHANGELOG.md"
