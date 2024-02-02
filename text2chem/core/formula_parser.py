@@ -80,7 +80,7 @@ def __parse_parentheses(init_formula, init_factor, curr_dict):
         factor = m.group(2) if m.group(2) != "" else "1"
         factor = simplify("(" + str(init_factor) + ")*(" + str(factor) + ")")
         unit_sym_dict = __parse_parentheses(m.group(1), factor, curr_dict)
-        init_formula = init_formula.replace(m.group(0), "")
+        init_formula = init_formula.replace(m.group(0), "") if unit_sym_dict else init_formula.replace(m.group(0), m.group(1))
 
     unit_sym_dict = __get_sym_dict(init_formula, init_factor)
     for el, amt in unit_sym_dict.items():
